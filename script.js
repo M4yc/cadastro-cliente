@@ -5,6 +5,11 @@ form.addEventListener("submit", function (event) {
   const nome = document.getElementById("nome").value;
   const email = document.getElementById("email").value;
   const li = document.createElement("li");
+
+  if (!email.includes("@")) {
+    alert("Email inválido!");
+    return;
+  }
   li.textContent = `${nome} - ${email}`;
   lista.appendChild(li);
   form.reset();
